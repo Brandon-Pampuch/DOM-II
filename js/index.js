@@ -1,6 +1,8 @@
 // Your code goes here
 
 
+
+
 const slideHeader = document.querySelector(".content-section h2")
 slideHeader.addEventListener('mouseover', (event)=>{
  event.target.style.color = 'red'
@@ -19,6 +21,7 @@ lightsOut.addEventListener("keydown",(event) =>{
 const lightsOn = document.querySelector("body")
 lightsOn.addEventListener("keyup",(event) =>{
     event.target.style.backgroundColor = "white"
+
 })
 
 const photoSpin = document.querySelector(".spin")
@@ -80,18 +83,27 @@ const letsGo = document.querySelector(".prop")
 letsGo.addEventListener("click", (event)=>{
     event.stopPropagation()
     event.target.style.border = "2px solid black"
-    
+    console.log(event.target, "child")
 })
-
-const div = document.querySelector(".text-content")
+const div = document.querySelector(".now")
 
 div.addEventListener("click", (event)=>{
-    event.target.style.border = "2px solid black"
+    div.style.border = "2px solid black"
+    console.log(event.target, "parent")
 })
+
+
+
+
+
+
+
 
 const form1 = document.querySelector("form")
 
 
-form1.event.addEventListener("submit",(event)=>{
+form1.addEventListener("submit",(event)=>{
     event.preventDefault()
 })
+
+TweenMax.to("#green", 2, {scale: 0.5})
